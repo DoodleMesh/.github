@@ -60,25 +60,42 @@ These services are containerized and deployed via **GitHub Actions**, with ArgoC
 
 ---
 
-## 📂 Repo Structure
+## 📦 Repository Structure
 
+**🔗 GitHub Organization:** [`DoodleMesh`](https://github.com/DoodleMesh)
 
-GitHub Organization: DoodleMesh/
+---
 
-# 🔧 Application Source Code
-├── doodle-frontend     # Next.js frontend
-├── doodle-backend      # Node.js API backend (Express + Prisma)
-├── doodle-websocket    # Node.js WebSocket server
+### 🔧 Application Code Repositories
 
-# 🚀 Kubernetes Manifests for ArgoCD
-├── argo-frontend       # K8s manifests for frontend
-├── argo-backend        # K8s manifests for backend
-├── argo-ws             # K8s manifests for WebSocket service
+| Repository | Description | Tech Stack |
+|------------|-------------|------------|
+| [`doodle-frontend`](https://github.com/DoodleMesh/doodle-frontend) | Frontend for DoodleMesh | Next.js |
+| [`doodle-backend`](https://github.com/DoodleMesh/doodle-backend) | REST API server | Node.js, Express, Prisma |
+| [`doodle-websocket`](https://github.com/DoodleMesh/doodle-websocket) | Real-time collaboration server | Node.js, WebSocket |
 
-🛠️ Each source repo includes a GitHub Actions pipeline to:
-- 🏗️ Build & push Docker images to container registry
-- 📝 Update manifests in the respective Argo repo
-- 🔁 Trigger automatic deployment via ArgoCD
+---
+
+### 🚀 Kubernetes Manifests for ArgoCD
+
+| Repository | Purpose | Includes |
+|------------|---------|----------|
+| [`argo-frontend`](https://github.com/DoodleMesh/argo-frontend) | Frontend deployment manifests | K8s YAML, ArgoCD Application |
+| [`argo-backend`](https://github.com/DoodleMesh/argo-backend) | Backend deployment manifests | K8s YAML, ArgoCD Application |
+| [`argo-ws`](https://github.com/DoodleMesh/argo-ws) | WebSocket deployment manifests | K8s YAML, ArgoCD Application |
+
+---
+
+### ⚙️ CI/CD Workflow
+
+Each application repository includes a **GitHub Actions** pipeline that:
+
+- 🏗️ **Builds** and pushes Docker images to the container registry  
+- 📝 **Commits** updated Kubernetes manifests to the ArgoCD manifest repos  
+- 🔁 **Triggers** automatic deployment through **ArgoCD**
+
+---
+
 
 ---
 
@@ -86,7 +103,7 @@ GitHub Organization: DoodleMesh/
 
 ![DoodleMesh Architecture](DoodleMesh.jpg)
 
-> 🔍 This diagram explains the interaction between components, services, and the infrastructure layer including Istio Gateway, ArgoCD, and cert-manager.
+> 🔍 This diagram explains the interaction between components, services, and the infrastructure layer including Istio Gateway, ArgoCD.
 
 ---
 
