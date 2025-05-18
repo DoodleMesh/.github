@@ -74,3 +74,47 @@ GitHub Organization: DoodleMesh/
 ├── argo-frontend       # K8s manifests for frontend
 ├── argo-backend        # K8s manifests for backend
 ├── argo-ws             # K8s manifests for WebSocket service
+
+🛠️ Each source repo includes a GitHub Actions pipeline to:
+- 🏗️ Build & push Docker images to container registry
+- 📝 Update manifests in the respective Argo repo
+- 🔁 Trigger automatic deployment via ArgoCD
+
+---
+
+## 📡 Architecture Overview
+
+![DoodleMesh Architecture](./assets/doodlemesh-architecture.png)
+
+> 🔍 This diagram explains the interaction between components, services, and the infrastructure layer including Istio Gateway, ArgoCD, and cert-manager.
+
+---
+
+## 🌐 Domain + TLS Setup
+
+- Managed via **Istio Gateway** + **VirtualServices**
+- HTTPS only (`443`) via `cert-manager` and **Let's Encrypt ClusterIssuer**
+- TLS certificate auto-renewal with `.well-known` challenge path routing
+
+---
+
+## 🔄 CI/CD Pipeline
+
+1. Push to `develop` in any source repo triggers GitHub Actions.
+2. Docker image is built and pushed to the container registry.
+3. Updated Kubernetes manifests are committed to the corresponding Argo repo.
+4. ArgoCD syncs the new configuration to the Kubernetes cluster automatically.
+
+---
+
+## 🙋‍♂️ Author
+
+**Kushan Arora**  
+🧠 Full-stack Developer | DevOps Enthusiast | Cloud Native Builder  
+🔗 [LinkedIn](https://linkedin.com/in/kushan23)
+
+---
+
+## 📌 License
+
+MIT License
