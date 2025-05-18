@@ -72,7 +72,7 @@ These services are containerized and deployed via **GitHub Actions**, with ArgoC
 |------------|-------------|------------|
 | [`doodle-frontend`](https://github.com/DoodleMesh/doodle-frontend) | Frontend for DoodleMesh | Next.js |
 | [`doodle-backend`](https://github.com/DoodleMesh/doodle-backend) | REST API server | Node.js, Express, Prisma |
-| [`doodle-websocket`](https://github.com/DoodleMesh/doodle-websocket) | Real-time collaboration server | Node.js, WebSocket |
+| [`doodle-ws`](https://github.com/DoodleMesh/doodle-ws) | Real-time collaboration server | Node.js, WebSocket |
 
 ---
 
