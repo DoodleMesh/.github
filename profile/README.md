@@ -84,7 +84,7 @@ GitHub Organization: DoodleMesh/
 
 ## 📡 Architecture Overview
 
-![DoodleMesh Architecture](./DooleMesh.png)
+![DoodleMesh Architecture](./DooleMesh.jpg)
 
 > 🔍 This diagram explains the interaction between components, services, and the infrastructure layer including Istio Gateway, ArgoCD, and cert-manager.
 
