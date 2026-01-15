@@ -16,7 +16,7 @@ DoodleMesh is composed of three primary services:
 2. **Backend API** – Built with **Node.js**, handles user auth, room metadata, and data persistence.
 3. **WebSocket Server** – Built with **Node.js**, enables real-time drawing sync between users.
 
-These services are containerized and deployed via **GitHub Actions**, with ArgoCD managing continuous delivery to a Kubernetes cluster on **DigitalOcean**.
+These services are containerized and deployed via **GitHub Actions**, with ArgoCD managing continuous delivery to a Kubernetes cluster on **Civo Cloud**.
 
 
 ---
